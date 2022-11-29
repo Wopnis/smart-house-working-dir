@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Smart-House-mobile app</title>
+</head>
+<body>
+    <div class="screen">
+        <div class="screen__top">
+            <img src="./img/top.svg" alt="top of app">
+        </div>
+        <div class="screen__content">
+            <div class="selectBox">
+                <div class="selectBox__selected">
+                    <span>Комнаты</span>
+                    <i class="ico_arrow"></i>
+                </div>
+                <div class="selectBox__list">
+                    <div class="selectbox__item selected" data-room="all">Все комнаты</div>
+                    <div class="selectbox__item" data-room="livingroom">Зал</div>
+                    <div class="selectbox__item" data-room="bedroom">Спальная</div>
+                    <div class="selectbox__item" data-room="kitchen">Кухня</div>
+                    <div class="selectbox__item" data-room="bathroom">Ванная</div>
+                    <div class="selectbox__item" data-room="studio">Кабинет</div>
+                    <div class="selectbox__item" data-room="washingroom">Уборная</div>
+                </div>
+            </div>
+            <div class="rooms">
+                <div data-room="livingroom" class="room">
+                    <i class="ico_livingroom"></i>
+                    <span>Зал</span>
+                </div>
+                <div data-room="bedroom" class="room">
+                    <i class="ico_bedroom"></i>
+                    <span>Спальная</span>
+                </div>
+                <div data-room="kitchen" class="room">
+                    <i class="ico_kitchen"></i>
+                    <span>Кухня</span>
+                </div>
+                <div data-room="bathroom" class="room">
+                    <i class="ico_bathroom"></i>
+                    <span>Ванная</span>
+                </div>
+                <div data-room="studio" class="room">
+                    <i class="ico_studio"></i>
+                    <span>Кабинет</span>
+                </div>
+                <div data-room="washingroom" class="room">
+                    <i class="ico_washingroom"></i>
+                    <span>Уборная</span>
+                </div>
+            </div>
+        </div>
+        <div class="screen__bottom">
+            <img src="./img/bottom.svg" alt="botttom of app">
+        </div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>

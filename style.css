@@ -1,0 +1,162 @@
+@import url('./fonts/icons/style.css');
+/* Шрифты */
+
+@font-face {
+    font-family: 'Marske';
+    src: url(/fonts/Marske.ttf);
+}
+
+
+:root {
+    --color_bg: #1D7373;
+    --gradient: linear-gradient(to right, #1D7373, #5CCCCC);
+    --no-active: #bcbec0;
+    --no-active-hover: #cae4e2;
+    --white: #f4f8f8;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Marske';
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.screen {
+    width: 350px;
+    height: 730px;
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-rows: 48px 1fr 62px;
+
+}
+
+.screen__top,
+.screen__bottom {
+    align-self: center;
+    justify-self: center;
+
+}
+
+.screen__content {}
+
+.selectBox {
+    margin: 0 auto;
+    max-width: fit-content;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2em;
+}
+
+.selectBox__selected {
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    background-color: var(--white);
+    z-index: 1;
+}
+
+.ico_arrow {
+    display: inline-block;
+    font-size: 0.8em;
+    color: var(--no-active);
+    margin-left: 10px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.3s ease-in-out;
+}
+
+.selectBox.open .selectBox__list {
+    max-height: 400px;
+    top: 130%;
+}
+
+.selectBox.open .ico_arrow {
+    transform: rotate(180deg);
+}
+
+.selectBox__list {
+    position: absolute;
+    padding: 4px;
+    max-height: 0;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.selectbox__item {
+    cursor: pointer;
+}
+
+.selectbox__item.selected,
+.selectbox__item:hover {
+    color: #5CCCCC;
+    font-weight: bold;
+}
+
+.selectbox__item:not(:last-child) {
+    margin-bottom: 6px;
+}
+
+.rooms {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 15px;
+
+}
+
+.room {
+    display: grid;
+    grid-template-rows: 4fr 2fr;
+    padding-top: 1em;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    background: var(--no-active);
+    border-radius: 12px;
+    grid-gap: 10px;
+    cursor: pointer;
+}
+
+.room:hover {
+    background: var(--no-active-hover);
+    border-radius: 12px;
+}
+
+.room span {
+    opacity: 0.6;
+}
+
+.room.selected {
+    background: var(--gradient);
+    color: white;
+}
+
+.room i {
+    align-self: center;
+    font-size: 6em;
+    opacity: 0.4;
+}
+
+.room.active i {
+    opacity: 1;
+}
+.room.active span {
+    opacity: 1;
+}
