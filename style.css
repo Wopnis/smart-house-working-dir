@@ -58,6 +58,9 @@ body {
 }
 
 .selectBox__selected {
+    display: flex;
+    justify-content: center;
+    min-width: 140px;
     font-size: 18px;
     font-weight: 600;
     position: relative;
@@ -77,6 +80,10 @@ body {
 
 .selectBox.open .selectBox__list {
     max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 135px;
     top: 130%;
 }
 

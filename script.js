@@ -29,12 +29,16 @@ dom.selectBox.querySelector('.selectBox__selected').addEventListener('click', e 
 
 dom.mainElem.addEventListener('click', e => {
     const target = e.target;
-    if (
-        !target.matches('.selectBox') &&
-        !target.parentElement.matches('.selectBox') &&
-        !target.parentElement.parentElement.matches('.selectBox')
-    ) {
-        dom.selectBox.classList.remove('open');
+    try {
+        if (
+            !target.matches('.selectBox') &&
+            !target.parentElement.matches('.selectBox') &&
+            !target.parentElement.parentElement.matches('.selectBox')
+        ) {
+            dom.selectBox.classList.remove('open');
+        }
+    } catch (error) {
+        error.log;
     }
 });
 
