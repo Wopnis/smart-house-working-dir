@@ -13,6 +13,7 @@
     --no-active: #bcbec0;
     --no-active-hover: #cae4e2;
     --white: #f4f8f8;
+    --simple-transition: all 0.3s ease-in-out;
 }
 
 * {
@@ -237,9 +238,46 @@ body {
 
 .temperature-button {
     width: 240px;
+    height: 240px;
     margin: 0 auto;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: relative;
 }
-.dots-box {}
+
+.temperature-button__info {
+    position: relative;
+    font-size: 32px;
+    border-radius: 80%;
+    background-color: var(--white);
+    box-shadow: 0 0 5px rgba(10, 10, 10, 0.5);
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperature-button__info::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+    border-radius: 100%;
+    border: 1px solid #000;
+    opacity: 0.5;
+}
+
+.dots-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 
 .dots,
 .line,
@@ -252,6 +290,7 @@ body {
     stroke-width: 2px;
     stroke-linecap: round;
     stroke-dasharray: 0 21;
+    transition: var(--simple-transition);
 }
 
 .line,
