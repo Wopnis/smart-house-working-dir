@@ -120,8 +120,9 @@ body {
 }
 
 .rooms {
-    display: grid;
-    grid-template-columns: repeat(2, 130px);
+    display: none;
+    margin: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-content: center;
     grid-gap: 15px;
@@ -166,4 +167,128 @@ body {
 }
 .room.active span {
     opacity: 1;
+}
+
+/* settings */
+.settings {
+    margin: 0 auto;
+    max-width: fit-content;
+}
+.settings__tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+
+}
+
+.option {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    padding: 0.5em;
+    padding-top: 1em;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    background: var(--no-active);
+    border-radius: 12px;
+    grid-gap: 10px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: var(--no-active-hover);
+    border-radius: 12px;
+}
+
+.option span {
+    opacity: 0.6;
+}
+
+.option.selected {
+    background: var(--gradient);
+    color: white;
+}
+
+.option i {
+    align-self: center;
+    font-size: 3em;
+    opacity: 0.4;
+}
+
+.option.active i {
+    opacity: 1;
+}
+.option.active span {
+    opacity: 1;
+}
+
+/* регулировка температуры */
+
+.settings__screens {
+    padding-top: 30px;
+}
+
+.settings__screen-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.temperature-button {
+    width: 240px;
+    margin: 0 auto;
+}
+.dots-box {}
+
+.dots,
+.line,
+.line-active,
+.round,
+.separate-lines,
+.separate-dots {
+    fill: transparent;
+    stroke: var(--no-active);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-dasharray: 0 21;
+}
+
+.line,
+.line-active,
+.round {
+    stroke-width: 1px;
+    stroke-dasharray: 273 282;
+    transform: rotate(47deg);
+    transform-origin: center;
+}
+
+.line-active {
+    transform: rotate(57deg);
+    stroke: black;
+    stroke-dasharray: 271 282;
+    /* с 60 до 271*/
+}
+
+.round {
+    stroke: var(--color_bg);
+    stroke-width: 6px;
+    stroke-dasharray: 0 276;
+    transform: rotate(-237deg);
+    /*от -237 до 47*/
+}
+
+.separate-lines,
+.separate-dots {
+    stroke: var(--white);
+    transform: rotate(58deg);
+    transform-origin: center;
+}
+
+.separate-dots {
+    stroke-dasharray: 42 313;
+}
+
+.separate-lines {
+    stroke-dasharray: 46 226;
 }

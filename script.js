@@ -72,7 +72,9 @@ function selectOfRoom(room) {
     if (room !== 'all') {
         const newSelectedRoom = dom.rooms.querySelector(`[data-room=${room}]`);
         newSelectedRoom.classList.add('selected');
-        // console.log(newSelectedRoom);
+        // renderScreeen(false);
+    } else {
+        // renderScreeen(true);
     }
 
     const newSelectedListItem = dom.selectBox.querySelector(`[data-room=${room}]`);
@@ -92,9 +94,21 @@ function selectOfRoom(room) {
     selectBoxSelectedText.innerText = roomsList[room];
 }
 
+//Клик по определенной комнате
 dom.eachRoom.forEach(room => {
     room.addEventListener('click', e => {
         const value = room.dataset.room;
         selectOfRoom(value);
     });
 });
+
+//Отображение нужного экрана
+function renderScreeen(isRooms) {
+    setTimeout(() => {
+        if (isRooms) {
+            dom.rooms.style.display = 'grid';
+        } else {
+            dom.rooms.style.display = 'none';
+        }
+    }, 300);
+}
