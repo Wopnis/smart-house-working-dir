@@ -13,7 +13,7 @@
     --no-active: #bcbec0;
     --no-active-hover: #cae4e2;
     --white: #f4f8f8;
-    --simple-transition: all 0.3s ease-in-out;
+    --simple-transition: all 0.5s ease-in-out;
 }
 
 * {
@@ -48,7 +48,7 @@ body {
 
 }
 
-.screen__content {}
+/* .screen__content {} */
 
 .selectBox {
     margin: 0 auto;
@@ -225,16 +225,33 @@ body {
     opacity: 1;
 }
 
-/* регулировка температуры */
+/* экраны настроек */
 
 .settings__screens {
     padding-top: 30px;
+}
+
+.settings__screen {
+    display: none;
+}
+
+.settings__screen.active {
+    display: block;
 }
 
 .settings__screen-title {
     text-align: center;
     margin-bottom: 20px;
 }
+
+.settings__screen-icon {
+    text-align: center;
+    font-size: 30px;
+    color: var(--no-active);
+    margin-bottom: 15px;
+}
+
+/* настройки температуры */
 
 .temperature-button {
     width: 240px;
@@ -298,14 +315,14 @@ body {
 .round {
     stroke-width: 1px;
     stroke-dasharray: 273 282;
-    transform: rotate(47deg);
+    transform: rotate(55deg);
     transform-origin: center;
 }
 
 .line-active {
-    transform: rotate(57deg);
+    transform: rotate(54deg);
     stroke: black;
-    stroke-dasharray: 271 282;
+    stroke-dasharray: 71 300;
     /* с 60 до 271*/
 }
 
@@ -330,4 +347,87 @@ body {
 
 .separate-lines {
     stroke-dasharray: 46 226;
+}
+
+.power {
+    background: var(--gradient);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 44px;
+    font-size: 24px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 2px;
+    margin: 0 auto;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.power-label {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.set-button {
+    background: var(--gradient);
+    color: white;
+    width: 250px;
+    margin: 20px auto 0;
+    text-align: center;
+    border-radius: 100px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+
+/* настройки влажности */
+
+.slider {
+    width: 100px;
+    height: 240px;
+    background-color: var(--no-active);
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider__progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient);
+    color: white;
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 18px;
+    min-height: 30px;
+    height: 45%;
+    transition: var(--simple-transition);
+}
+
+.switch {
+    width: 60px;
+    height: 30px;
+    background: var(--no-active);
+    margin: 30px auto;
+    border-radius: 60px;
+    position: relative;
+}
+
+.switch div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background: var(--gradient);
+    transition: var(--simple-transition);
 }

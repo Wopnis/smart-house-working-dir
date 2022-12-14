@@ -57,7 +57,7 @@
             <div id="settings" class="settings">
                 <div class="settings__tabs">
                     <div class="settings__tab">
-                        <div class="option" data-type="temperature">
+                        <div class="option selected" data-type="temperature">
                             <i class="ico_temperature"></i>
                             <span>Температура</span>
                         </div>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="settings__screens">
-                    <div class="settings__screen" data-type="temperature">
+                    <div class="settings__screen active" data-type="temperature">
                         <div class="settings__screen-title">Температура</div>
                         <div class="temperature-button">
                             <svg class="dots-box" viewBox="0 0 102 102">
@@ -92,10 +92,35 @@
                                 <span>C</span>
                             </div>
                         </div>
+                        <div class="power">
+                            <i class="ico_power"></i>
+                        </div>
+                        <div class="power-label">Нажать, чтобы выключить</div>
+                        <div class="set-button">установить температуру</div>
                     </div>
-                    <div class="settings__screen" data-type="lights">
+                    <div class="settings__screen " data-type="lights">
+                        <div class="settings__screen-title">Освещение</div>
+                        <div class="settings__screen-icon">
+                            <i class="ico_sun"></i>
+                        </div>
+                        <div class="slider">
+                            <div class="slider__progress">45 &#37;</div>
+                        </div>
+                        <div class="switch">
+                            <div></div>
+                        </div>
                     </div>
-                    <div class="settings__screen" data-type="humidity">
+                    <div class="settings__screen " data-type="humidity">
+                        <div class="settings__screen-title">Влажность</div>
+                        <div class="settings__screen-icon">
+                            <i class="ico_humidity"></i>
+                        </div>
+                        <div class="slider">
+                            <div class="slider__progress">45 &#37;</div>
+                        </div>
+                        <div class="switch">
+                            <div></div>
+                        </div>
                     </div>
                 </div>
             </div>
