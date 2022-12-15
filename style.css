@@ -121,7 +121,7 @@ body {
 }
 
 .rooms {
-    display: none;
+    display: grid;
     margin: 0 20px;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -131,6 +131,7 @@ body {
 }
 
 .room {
+    /* display: none; */
     display: grid;
     grid-template-rows: 4fr 2fr;
     padding-top: 1em;
@@ -174,7 +175,9 @@ body {
 .settings {
     margin: 0 auto;
     max-width: fit-content;
+    display: none;
 }
+
 .settings__tabs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

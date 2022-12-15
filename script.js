@@ -10,6 +10,13 @@ const dom = {
     selectboxItem: document.querySelectorAll('.selectbox__item'),
     mainElem: document.body,
     selectBoxList: document.querySelector('.selectBox__list'),
+    screenContent: document.querySelector('.screen__content'),
+};
+
+const settingsElem = {
+    settingsBlock: document.getElementById('settings'),
+    settingsTabsBlock: document.getElementById('settings-tabs'),
+    settingsPanelBlock: document.getElementById('settings-panel'),
 };
 
 const roomsList = {
@@ -72,9 +79,9 @@ function selectOfRoom(room) {
     if (room !== 'all') {
         const newSelectedRoom = dom.rooms.querySelector(`[data-room=${room}]`);
         newSelectedRoom.classList.add('selected');
-        // renderScreeen(false);
+        renderScreeen(false);
     } else {
-        // renderScreeen(true);
+        renderScreeen(true);
     }
 
     const newSelectedListItem = dom.selectBox.querySelector(`[data-room=${room}]`);
@@ -106,9 +113,18 @@ dom.eachRoom.forEach(room => {
 function renderScreeen(isRooms) {
     setTimeout(() => {
         if (isRooms) {
+            settingsElem.settingsBlock.style.display = 'none';
+            settingsElem.settingsBlock.style.zIndex = '';
             dom.rooms.style.display = 'grid';
+            // console.log(settingsElem.settingsBlock.style.display == 'block');
+            // console.log('1-part');
         } else {
+            settingsElem.settingsBlock.style.display = 'block';
+            settingsElem.settingsBlock.style.zIndex = '2';
             dom.rooms.style.display = 'none';
+            // console.log(settingsElem.settingsBlock.style.display == 'block');
+            // console.log(dom.rooms.style.display == 'none');
+            // console.log('2-part');
         }
     }, 300);
 }
