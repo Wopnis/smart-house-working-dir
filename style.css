@@ -320,12 +320,13 @@ body {
     stroke-dasharray: 273 282;
     transform: rotate(55deg);
     transform-origin: center;
+    transition: var(--simple-transition);
 }
 
 .line-active {
     transform: rotate(54deg);
     stroke: black;
-    stroke-dasharray: 71 300;
+    stroke-dasharray: 55 300;
     /* с 60 до 271*/
 }
 
@@ -334,7 +335,7 @@ body {
     stroke-width: 6px;
     stroke-dasharray: 0 276;
     transform: rotate(-237deg);
-    /*от -237 до 47*/
+    /*от -237 до 48*/
 }
 
 .separate-lines,

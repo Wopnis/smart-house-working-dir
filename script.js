@@ -17,6 +17,8 @@ const settingsElem = {
     settingsBlock: document.getElementById('settings'),
     settingsTabsBlock: document.getElementById('settings-tabs'),
     settingsPanelBlock: document.getElementById('settings-panel'),
+    temperatureLine: document.getElementById('temperature-line'),
+    temperatureCircle: document.getElementById('temperature-round'),
 };
 
 const roomsList = {
@@ -116,15 +118,82 @@ function renderScreeen(isRooms) {
             settingsElem.settingsBlock.style.display = 'none';
             settingsElem.settingsBlock.style.zIndex = '';
             dom.rooms.style.display = 'grid';
-            // console.log(settingsElem.settingsBlock.style.display == 'block');
-            // console.log('1-part');
         } else {
             settingsElem.settingsBlock.style.display = 'block';
             settingsElem.settingsBlock.style.zIndex = '2';
             dom.rooms.style.display = 'none';
-            // console.log(settingsElem.settingsBlock.style.display == 'block');
-            // console.log(dom.rooms.style.display == 'none');
-            // console.log('2-part');
         }
     }, 300);
 }
+
+//панель настроек комнаты
+
+const setData = {
+    all: {
+        temperature: 0,
+        lights: 0,
+        humidity: 0,
+    },
+    livingroom: {
+        temperature: 0,
+        lights: 0,
+        humidity: 0,
+    },
+    bedroom: {
+        temperature: 0,
+        lights: 0,
+        humidity: 0,
+    },
+    kitchen: {
+        temperature: 0,
+        lights: 0,
+        humidity: 0,
+    },
+    bathroom: {
+        temperature: 0,
+        lights: 0,
+        humidity: 0,
+    },
+    studio: {
+        temperature: 0,
+        lights: 0,
+        humidity: 0,
+    },
+    washingroom: {
+        temperature: 0,
+        lights: 0,
+        humidity: 0,
+    },
+};
+
+//установка температуры
+
+function renderTemperature(temperature) {
+    const min = 15;
+    const max = 30;
+    const range = max - min;
+    const percent = range / 100;
+    const lineMin = 60;
+    const lineMax = 271;
+    const lineRange = lineMax - lineMin;
+    const linePercent = lineRange / 100;
+    const circleMin = -237;
+    const circleMax = 47;
+    const circleRange = circleMax - circleMin;
+    const circlePercent = circleRange / 100;
+
+    // console.log(percent, linePercent, circlePercent);
+
+    if (temperature >= min && temperature <= max) {
+        let finishPercent = Math.round((temperature - min) / percent);
+        let lineFinishpercent = lineMin + linePercent * finishPercent;
+        let circleFinishpercent = circleMin + circlePercent * finishPercent;
+        console.log(lineFinishpercent, circleFinishpercent);
+        settingsElem.temperatureLine.style.strokeDasharray = `${lineFinishpercent} 300`;
+        settingsElem.temperatureCircle.style.transform = `rotate(${circleFinishpercent}deg)`;
+    }
+    // console.log(temperature >= min);
+    // console.log(temperature <= max);
+}
+
+renderTemperature(30);
